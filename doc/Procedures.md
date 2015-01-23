@@ -31,17 +31,18 @@ The framework will read the `/imports/packages` section from the `package.json` 
 
 ### 4. Collect environment configuration
 
-Collect the different kind of `environments` that we will have to satisfy in order to complete the dependency resolution. For example:
+Collect the different kind of `environments` that we will have to satisfy in order to complete the dependency resolution, and initialize the resolution subsystem for each one of them. For example:
 
  * __binary__ environment provides system-wide binaries. In order to satisfy this environment you will need to append in the `PATH` environment variable the path to the folder that contains the binaries.
  * __library__ environment provides system-wide libraries. In a simmilar manner with the binary environment, you just have to append the library directory in the `LD_LIBRARY_PATH` environment variable.
  * __py-lib__ environment provides a library for the python interpreter. The environment variable that should be updated is `PYTHONPATH`.
  * __perl-lib__ enviromnent provides a library for the perl interpreter. The environment variable that should be updated is `PERLLIB`.
 
+### 5. 
+
 By reading all the `package.json` files from every package in the dependency tree.
 
  * Update `PATH` and `LD_LIBRARY_PATH` environment variables in order to include the binary and library files from the package. Optionally update the appropriate variables for python, perl and other utilities.
  * Create a copy-on-write 
-
 
 (Document in progress)
